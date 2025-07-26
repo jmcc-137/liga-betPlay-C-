@@ -1,77 +1,92 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using LIGA.Models;
+using LIGA.funciones;
 
 namespace LIGA.Menus
 {
     public class Menu
     {
 
+
         public void MainMenu()
         {
-            while (true)
-            {
-                Console.Clear();
-                Console.WriteLine("0. Create Torneo");
-                Console.WriteLine("1. Registro Equipos");
-                Console.WriteLine("2. Registro jugadores");
-                Console.WriteLine("3. Transferencias (Compra,Prestamo)");
-                Console.WriteLine("4. Estadisticas");
-                Console.WriteLine("5. Salir");
+             while (true)
+             {
+            Console.Clear();
+            Console.WriteLine("0. Create Torneo");
+            Console.WriteLine("1. Registro Equipos");
+            Console.WriteLine("2. Registro jugadores");
+            Console.WriteLine("3. Transferencias (Compra,Prestamo)");
+            Console.WriteLine("4. Estadisticas");
+            Console.WriteLine("5. Salir");
 
-                int opcion = int.Parse(Console.ReadLine());
-                switch (opcion)
-                {
-                    case 0:
-                        MenuCero();
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        return;
-                    default:
-                        Console.WriteLine("opcion invalida");
-                        break;
+            int opcion = int.Parse(Console.ReadLine());
+            switch (opcion)
+            {
+                case 0:
+                    MenuCero();
+                    break;
+
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    return;
+                default:
+                    Console.WriteLine("opcion invalida");
+                    break;
                 }
             }
         }
         public void MenuCero()
         {
-            while (true)
+
+             while (true)
+             {
+
+            Console.WriteLine("1 Add Torneo");
+            Console.WriteLine("2 Buscar Torneo");
+            Console.WriteLine("3 Eliminar Torneo");
+            Console.WriteLine("4 Actualizar Torneo");
+            Console.WriteLine("5 Back Main Mneu");
+
+            var opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
             {
-                Console.Clear();
-                Console.WriteLine("1 Add Torneo");
-                Console.WriteLine("2 Buscar Torneo");
-                Console.WriteLine("3 Eliminar Torneo");
-                Console.WriteLine("4 Actualizar Torneo");
-                Console.WriteLine("5 Back Main Mneu");
+                case 1:
 
-                var opcion = int.Parse(Console.ReadLine());
-
-                switch (opcion)
-                    {
-                        case 1:
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            break;
-                        case 5:
-                            return;
-                        default:
-                            Console.WriteLine("opcion invalida");
-                            break;
-                    }
+                        CrearTorneo CT = new CrearTorneo();
+                        CT.Crear();
+                    break;
+                case 2:
+                        SearhTorneo BT = new SearhTorneo();
+                        BT.Buscar();
+                    break;
+                case 3:
+                        DeleteTorneo DT = new DeleteTorneo();
+                        DT.Elimiar();
+                    break;
+                case 4:
+                        UpdateTorneo AT = new UpdateTorneo();
+                        AT.Actualizar();
+                    break;
+                case 5:
+                        return;
+                default:
+                    Console.WriteLine("opcion invalida");
+                    break;
             }
+         }
         }
 
         public void MenuUno()
@@ -106,6 +121,16 @@ namespace LIGA.Menus
             Console.WriteLine("4.3 Jugadores Mas Caros Por Equipo");
             Console.WriteLine("4.4 Jugadores Menor Al Promedio De Edad Por Equipo");
             Console.WriteLine("4.5 Salir Main Menu");
+        }
+
+        public void SubMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("1. por ID");
+            Console.WriteLine("2. por nombre");
+            Console.WriteLine("3. salir");
+            
+
         }
     }
 }
