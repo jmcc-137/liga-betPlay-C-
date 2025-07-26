@@ -1,0 +1,15 @@
+/home/jm/developnet/LIGA/bin/Debug/net8.0/LIGA
+/home/jm/developnet/LIGA/bin/Debug/net8.0/LIGA.deps.json
+/home/jm/developnet/LIGA/bin/Debug/net8.0/LIGA.runtimeconfig.json
+/home/jm/developnet/LIGA/bin/Debug/net8.0/LIGA.dll
+/home/jm/developnet/LIGA/bin/Debug/net8.0/LIGA.pdb
+/home/jm/developnet/LIGA/obj/Debug/net8.0/LIGA.GeneratedMSBuildEditorConfig.editorconfig
+/home/jm/developnet/LIGA/obj/Debug/net8.0/LIGA.AssemblyInfoInputs.cache
+/home/jm/developnet/LIGA/obj/Debug/net8.0/LIGA.AssemblyInfo.cs
+/home/jm/developnet/LIGA/obj/Debug/net8.0/LIGA.csproj.CoreCompileInputs.cache
+/home/jm/developnet/LIGA/obj/Debug/net8.0/LIGA.sourcelink.json
+/home/jm/developnet/LIGA/obj/Debug/net8.0/LIGA.dll
+/home/jm/developnet/LIGA/obj/Debug/net8.0/refint/LIGA.dll
+/home/jm/developnet/LIGA/obj/Debug/net8.0/LIGA.pdb
+/home/jm/developnet/LIGA/obj/Debug/net8.0/LIGA.genruntimeconfig.cache
+/home/jm/developnet/LIGA/obj/Debug/net8.0/ref/LIGA.dll
