@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LIGA.Menus;
-using LIGA.funciones;
+using LIGA.funciones_Equipo;
 using LIGA.Models;
 using Microsoft.VisualBasic;
-namespace LIGA.funciones
+namespace LIGA.funciones_Equipo
 {
     public class UpdateTorneo
     {
@@ -16,7 +16,7 @@ namespace LIGA.funciones
             Menu menu = new Menu();
             menu.SubMenu();
             Console.WriteLine("Escoja la opcion Actualizar por:");
-            int opcion = int.Parse(Console.ReadLine());
+            int opcion = int.Parse(Console.ReadLine() ?? "");
             switch (opcion)
             {
                 case 1:
@@ -61,12 +61,12 @@ namespace LIGA.funciones
                         Console.WriteLine($"ID: {torneo.ID} - Nombre:{torneo.Nombre}");
                     }
                     Console.WriteLine("Ingrese el nombre a cambiar: ");
-                    string buscar = Console.ReadLine();
+                    string buscar = Console.ReadLine() ?? "";
                     var coincidencias = CrearTorneo.torneos.FirstOrDefault(n => n.Nombre == buscar);
                     if (coincidencias != null)
                     {
                         Console.WriteLine("Ingrese el nuevo nombre");
-                        string Nuevo = Console.ReadLine();
+                        string Nuevo = Console.ReadLine() ?? "";
                         var name = CrearTorneo.torneos.FirstOrDefault(n => n.Nombre == Nuevo);
                         coincidencias.Nombre = Nuevo;
                         Console.WriteLine("Actualizado con exito");

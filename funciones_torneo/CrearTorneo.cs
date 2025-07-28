@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 
 using LIGA.Models;
-namespace LIGA.funciones
+namespace LIGA.funciones_Equipo
 {
     public class CrearTorneo
     {
@@ -21,9 +21,9 @@ namespace LIGA.funciones
                 Console.WriteLine("Crear Torneo");
 
                 Console.WriteLine("ID del torneo: ");
-                id = Console.ReadLine();
+                id = Console.ReadLine() ?? "";
                 Console.WriteLine("Nombre del Torneo: ");
-                string nombre = Console.ReadLine();
+                string nombre = Console.ReadLine() ?? "";
                 if (int.TryParse(id, out numero))
                 {
                     Console.WriteLine("ID ACEPTADO");

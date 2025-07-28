@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LIGA.funciones;
+using LIGA.funciones_Equipo;
 using LIGA.Menus;
 using LIGA.Models;
-namespace LIGA.funciones
+namespace LIGA.funciones_Equipo
 {
     public class DeleteTorneo
     {
@@ -14,8 +14,7 @@ namespace LIGA.funciones
             Console.WriteLine("Eliminar Por: ");
             Menu menu = new Menu();
             menu.SubMenu();
-            int opcion = int.Parse(Console.ReadLine());
-            Torneo torneoEdit = null;
+            int opcion = int.Parse(Console.ReadLine() ?? "");
             switch (opcion)
             {
                 case 1:
@@ -57,7 +56,7 @@ namespace LIGA.funciones
                         Console.WriteLine($"{el.ID} - {el.Nombre}");
                     }
                     Console.WriteLine("Ingrese el nombre a eliminar");
-                    string DeleteName = Console.ReadLine();
+                    string DeleteName = Console.ReadLine() ?? "";
                     var delete = CrearTorneo.torneos.FirstOrDefault(d => d.Nombre == DeleteName);
                     if (DeleteName != null)
                     {

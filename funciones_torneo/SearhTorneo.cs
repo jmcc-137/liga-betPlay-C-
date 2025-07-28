@@ -4,10 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using LIGA.Models;
-using LIGA.funciones;
+using LIGA.funciones_Equipo;
 using LIGA.Menus;
 using System.Runtime.InteropServices;
-namespace LIGA.funciones
+namespace LIGA.funciones_Equipo
 
 {
     public class SearhTorneo
@@ -18,13 +18,13 @@ namespace LIGA.funciones
             Menu menu = new Menu();
             Console.WriteLine("Escoje una opcion para buscar: ");
             menu.SubMenu();
-            int opcion = int.Parse(Console.ReadLine());
+            int opcion = int.Parse(Console.ReadLine() ?? "");
 
             switch (opcion)
             {
                 case 1:
                      Console.WriteLine("Ingrese el ID: ");
-                     int BuscarId = int.Parse(Console.ReadLine());
+                     int BuscarId = int.Parse(Console.ReadLine() ?? "");
                      var encontrado = CrearTorneo.torneos.FirstOrDefault(t => t.ID == BuscarId);
                     if (encontrado != null)
                     {
@@ -42,7 +42,7 @@ namespace LIGA.funciones
 
                     case 2:
                     Console.WriteLine("Ingrese el nombre");
-                    string buscar = Console.ReadLine();
+                    string buscar = Console.ReadLine() ?? "";
                     var encontradoTitulo = CrearTorneo.torneos.Where(t => t.Nombre != null && t.Nombre.ToLower().Contains(buscar.ToLower())). ToList();
                     if (encontradoTitulo.Count > 0)
                     {

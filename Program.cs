@@ -1,12 +1,12 @@
 ﻿
-using LIGA.funciones;
+using LIGA.funciones_Equipo;
 using LIGA.Menus;
 using LIGA.Models;
 internal class Program
 {
     public static void Main(string[] args)
     {
-
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Player player = new Player();
         Menu menu = new Menu();
         // player.Id = 1;

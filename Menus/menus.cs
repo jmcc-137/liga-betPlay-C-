@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using LIGA.Models;
-using LIGA.funciones;
+using LIGA.funciones_Equipo;
 
 namespace LIGA.Menus
 {
@@ -24,7 +24,7 @@ namespace LIGA.Menus
             Console.WriteLine("4. Estadisticas");
             Console.WriteLine("5. Salir");
 
-            int opcion = int.Parse(Console.ReadLine());
+            int opcion = int.Parse(Console.ReadLine() ?? "");
             switch (opcion)
             {
                 case 0:
@@ -32,6 +32,7 @@ namespace LIGA.Menus
                     break;
 
                 case 1:
+                        MenuUno();
                     break;
                 case 2:
                     break;
@@ -59,7 +60,7 @@ namespace LIGA.Menus
             Console.WriteLine("4 Actualizar Torneo");
             Console.WriteLine("5 Back Main Mneu");
 
-            var opcion = int.Parse(Console.ReadLine());
+            var opcion = int.Parse(Console.ReadLine()?? "");
 
             switch (opcion)
             {
@@ -91,13 +92,40 @@ namespace LIGA.Menus
 
         public void MenuUno()
         {
-            Console.WriteLine("1.1 Registrar Equipo");
-            Console.WriteLine("1.2 Registrar Cuerpo Tecnico");
-            Console.WriteLine("1.3 Registrar Cuerpo Medico");
-            Console.WriteLine("1.4 Inscripcion Torneo");
-            Console.WriteLine("1.5 Notificacion de Transferencias");
-            Console.WriteLine("1.6 Salir De Torneo");
-            Console.WriteLine("1.7 Salir Main Menu");
+            while (true) {
+                Console.WriteLine("1 Registrar Equipo");
+                Console.WriteLine("2 Registrar Cuerpo Tecnico");
+                Console.WriteLine("3 Registrar Cuerpo Medico");
+                Console.WriteLine("4 Inscripcion Torneo");
+                Console.WriteLine("5 Notificacion de Transferencias");
+                Console.WriteLine("6 Salir De Torneo");
+                Console.WriteLine("7 Salir Main Menu");
+
+                var opcion = int.Parse(Console.ReadLine() ?? "");
+
+                switch (opcion)
+                {
+                    case 1:
+                        RegistrarEquipo registrar = new RegistrarEquipo();
+                        registrar.Registrar();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        return;
+                    default:
+                        Console.WriteLine("Opcion invalida");
+                        break;
+                }
+            }
         }
         public void MenuDos()
         {
