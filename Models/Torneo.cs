@@ -15,16 +15,20 @@ namespace LIGA.Models
         public int ID { get; set; }
         public string? Nombre { get; set; }
 
+        public string? Pais { get; set; }
 
 
-        public Torneo(int id, string? nombre)
+        public List<Team> equiposParticipantes { get; set; } = new List<Team>();
+        public static List<Torneo> torneos { get; set; } = new List<Torneo>();
+        public Torneo(int id, string? nombre, string? pais)
         {
             ID = id;
             Nombre = nombre;
+            Pais = pais;
         }
         public override string ToString()
         {
-            return $"{ID}, {Nombre}";
+            return $"{ID}, {Nombre}, {Pais}, equipos Inscritos: {equiposParticipantes.Count}";
         }
         public Torneo() { }
     }

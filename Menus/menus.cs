@@ -5,24 +5,26 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using LIGA.Models;
 using LIGA.funciones_Equipo;
-
+using LIGA.funciones_extras;
 namespace LIGA.Menus
 {
     public class Menu
     {
 
-
+    private List<Torneo> torneos = new List<Torneo>();
+    private List<Team> equipos = new List<Team>();
         public void MainMenu()
         {
              while (true)
              {
+                LetraPorLetra efecto = new LetraPorLetra();
             Console.Clear();
-            Console.WriteLine("0. Create Torneo");
-            Console.WriteLine("1. Registro Equipos");
-            Console.WriteLine("2. Registro jugadores");
-            Console.WriteLine("3. Transferencias (Compra,Prestamo)");
-            Console.WriteLine("4. Estadisticas");
-            Console.WriteLine("5. Salir");
+            efecto.efectoEcribir("0. Create Torneo");
+            efecto.efectoEcribir("1. Registro Equipos");
+            efecto.efectoEcribir("2. Registro jugadores");
+            efecto.efectoEcribir("3. Transferencias (Compra,Prestamo)");
+            efecto.efectoEcribir("4. Estadisticas");
+            efecto.efectoEcribir("5. Salir");
 
             int opcion = int.Parse(Console.ReadLine() ?? "");
             switch (opcion)
@@ -35,10 +37,13 @@ namespace LIGA.Menus
                         MenuUno();
                     break;
                 case 2:
+                        MenuDos();
                     break;
                 case 3:
+                        MenuTres();
                     break;
                 case 4:
+                        MenuCuatro();
                     break;
                 case 5:
                     return;
@@ -53,12 +58,12 @@ namespace LIGA.Menus
 
              while (true)
              {
-
-            Console.WriteLine("1 Add Torneo");
-            Console.WriteLine("2 Buscar Torneo");
-            Console.WriteLine("3 Eliminar Torneo");
-            Console.WriteLine("4 Actualizar Torneo");
-            Console.WriteLine("5 Back Main Mneu");
+            LetraPorLetra efecto = new LetraPorLetra();
+            efecto.efectoEcribir("1 Add Torneo");
+            efecto.efectoEcribir("2 Buscar Torneo");
+            efecto.efectoEcribir("3 Eliminar Torneo");
+            efecto.efectoEcribir("4 Actualizar Torneo");
+            efecto.efectoEcribir("5 Back Main Mneu");
 
             var opcion = int.Parse(Console.ReadLine()?? "");
 
@@ -93,31 +98,40 @@ namespace LIGA.Menus
         public void MenuUno()
         {
             while (true) {
-                Console.WriteLine("1 Registrar Equipo");
-                Console.WriteLine("2 Registrar Cuerpo Tecnico");
-                Console.WriteLine("3 Registrar Cuerpo Medico");
-                Console.WriteLine("4 Inscripcion Torneo");
-                Console.WriteLine("5 Notificacion de Transferencias");
-                Console.WriteLine("6 Salir De Torneo");
-                Console.WriteLine("7 Salir Main Menu");
+                LetraPorLetra efecto = new LetraPorLetra();
+                efecto.efectoEcribir("1 Registrar Equipo");
+                efecto.efectoEcribir("2 Registrar Cuerpo Tecnico");
+                efecto.efectoEcribir("3 Registrar Cuerpo Medico");
+                efecto.efectoEcribir("4 Inscripcion Torneo");
+                efecto.efectoEcribir("5 Notificacion de Transferencias");
+                efecto.efectoEcribir("6 Salir De Torneo");
+                efecto.efectoEcribir("7 Salir Main Menu");
 
                 var opcion = int.Parse(Console.ReadLine() ?? "");
 
                 switch (opcion)
                 {
                     case 1:
-                        RegistrarEquipo registrar = new RegistrarEquipo();
-                        registrar.Registrar();
+                        RegistrarEquipo RE = new RegistrarEquipo();
+                        RE.Registrar();
                         break;
                     case 2:
+                        RegistrarCTecnico RT = new RegistrarCTecnico();
+                        RT.ReTec();
                         break;
                     case 3:
+                        RegistrarCMedico RM = new RegistrarCMedico();
+                        RM.ReMed();
                         break;
                     case 4:
+                        IncripcionTorneo IT = new IncripcionTorneo();
+                        IT.InsTor();
                         break;
                     case 5:
                         break;
                     case 6:
+                        SalirTorneo ST = new SalirTorneo();
+                        ST.SalirDeTorneo();
                         break;
                     case 7:
                         return;
@@ -129,14 +143,38 @@ namespace LIGA.Menus
         }
         public void MenuDos()
         {
-            Console.WriteLine("2.1 Registrar Jugador");
-            Console.WriteLine("2.2 Buscar Jugador");
-            Console.WriteLine("2.3 Editar Jugador");
-            Console.WriteLine("2.4 Eliminar Jugador");
-            Console.WriteLine("2.5 Salir Main Menu");
+            while (true)
+            {
+                Console.Clear();
+                LetraPorLetra efecto = new LetraPorLetra();
+                efecto.efectoEcribir("1 Registrar Jugador");
+                efecto.efectoEcribir("2 Buscar Jugador");
+                efecto.efectoEcribir("3 Editar Jugador");
+                efecto.efectoEcribir("4 Eliminar Jugador");
+                efecto.efectoEcribir("5 Salir Main Menu");
+                var opcion = int.Parse(Console.ReadLine() ?? "");
+
+                switch (opcion)
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        return;
+                    default:
+                        Console.WriteLine("Opcion invalida");
+                        break;
+                }
+            }
         }
         public void MenuTres()
         {
+            Console.Clear();
             Console.WriteLine("3.1 Comprar Jugador");
             Console.WriteLine("3.2 Prestar Jugador");
             Console.WriteLine("3.2 Salir Main Menu");

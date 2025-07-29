@@ -19,24 +19,28 @@ namespace LIGA.funciones_Equipo
 
                 Console.WriteLine("ingrese el ID del Equipo: ");
                 id = Console.ReadLine() ?? "";
+                if (!int.TryParse(id, out numero))
+                {
+                     Console.WriteLine("ID invalido");
+                    
+                    return;
+
+                }
+                else
+                {
+                Console.WriteLine("ID ACEPTADO");  
                 Console.WriteLine("Nombre del equipo");
                 var nombre = Console.ReadLine();
                 Console.WriteLine("Ingrese la ciudad");
                 var ciudad = Console.ReadLine();
                 Console.WriteLine("Ingrese el Pais");
                 var pais = Console.ReadLine();
-                if (int.TryParse(id, out numero))
-                {
-                    Console.WriteLine("ID ACEPTADO");
-                    Team NewEquipo = new Team(numero, nombre, ciudad, pais);
-                    equipo.Add(NewEquipo);
-                    Console.WriteLine(NewEquipo.ToString());
-                    
+                
+                Team NewEquipo = new Team(numero, nombre, ciudad, pais);
+                equipo.Add(NewEquipo);
+                Console.WriteLine(NewEquipo.ToString());
                 }
-                else
-                {
-                    Console.WriteLine("ID invalido");
-                }
+                
 
 
 

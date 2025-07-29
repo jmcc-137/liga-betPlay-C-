@@ -13,8 +13,8 @@ namespace LIGA.Models
         public string? City { get; set; }
         public string? Country { get; set; }
         public List<Player> equipos { get; set; } = new List<Player>();
-
-
+        public List<Tec> tecnicos { get; set; } = new List<Tec>();
+        public List<Med> Medicos { get; set; } = new List<Med>();
         public Team(int id, string? name, string? city, string? country)
         {
             ID = id;
